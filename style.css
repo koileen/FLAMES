@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+body {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: skyblue;
+    background-image: url('bg-images/background.png');
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+}
+
+.form-box {
+    width: 400px;
+    height: 600px;
+    background: transparent;
+    border: 2px solid rgba(206,178,124,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    padding: 10px 20px;
+    margin: 30px;
+}
+
+.form-box h1 {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10px;
+    color:#CEB27C;
+}
+
+.form-box h2 {
+    font-size: 20px;
+    padding-top: 10px;
+    text-indent: 20px;
+    color:#CEB27C;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 40px;
+    
+}
+
+.input-box input[type="text"] {
+    text-indent: 20px;
+    color: #fff;
+}
+
+.input-box input[type="date"] {
+    text-indent: 10px;
+}
+
+.input-box input::placeholder {
+    color: #A9A9AC;
+}
+
+.input-box input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(100%);
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.input-box input[type="date"]::-webkit-datetime-edit {
+    color: #fff;
+}
+
+.input-box ion-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+
+.form-box .btn-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.btn-box .btn {
+    width: 70%;
+    height: 45px;
+    background:#CEB27C;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.tarot-box {
+    width: 1000px;
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    transition: opacity 1s ease-in-out;
+    background-image: url('bg-images/tarot-box-bg.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.tarot-box .tarot-card-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:auto;
+    height:auto;
+}
+
+.tarot-card {
+    width: 300px;
+    height: 400px;
+    margin: 0 30px;
+    border: 2px solid #CEB27C;
+    border-radius: 20px;
+    background: black;
+    color: #CEB27C;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 2s ease-in-out;
+    transform-style: preserve-3d;
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes flipCard {
+    0% {
+        transform: rotateY(0deg);
+    }
+    
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+
+.tarot-card .front,
+.tarot-card .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hide the back side initially */
+}
+
+.tarot-card .front{
+    background-image: url('bg-images/tarot-back-design.png');
+    background-size: cover;
+    background-origin: content-box;
+    background-position: center center;
+}
+
+.tarot-card .image-container{
+    margin-top: 20px;
+}
+
+
+.tarot-card .back {
+    transform: rotateY(180deg); /* Initially hide the back side by rotating */
+}
+
+.tarot-box .results {
+    width: 100%;
+    height:auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    color: #CEB27C;
+    opacity: 0;
+}
+
+.results h1 {
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
